@@ -6,13 +6,7 @@
   "license": "MIT",
   "repository": "https://github.com/gobblejs/gobble-eslint",
   "dependencies": {
-    "chalk": "^1.0.0",
-    "eslint": "^0.18.0",
-    "findup-sync": "^0.2.1",
-    "log-syntax-error": "^0.1.0",
-    "promise-map-series": "^0.2.1",
-    "sander": "^0.2.2",
-    "sorcery": "^0.3.4"
+    "eslint": "^2.0"
   },
   "keywords": [
     "gobble",

@@ -5,9 +5,14 @@ module.exports = function eslint ( inputdir, options ) {
 
 	var reportOnly = options.reportOnly;
 	var reporter = options.reporter;
+  var useGrowl = options.growl;
 
 	delete options.reporter;
 	delete options.reportOnly;
+  delete options.growl;
+
+  // This is necessary for eslint to lint files in .gobble directories
+  options.dotfiles = true;
 
   // This is necessary for eslint to lint files in .gobble directories
   options.dotfiles = true;
@@ -22,6 +27,13 @@ module.exports = function eslint ( inputdir, options ) {
     if ( !reportOnly && reports.errorCount ) {
       throw new Error( 'Linting failed' );
     }
+  }
+
+  if (useGrowl) {
+    var notification = 'Result: ' + reports.errorCount + ' errors, ' +
+      reports.warningCount + ' warnings';
+
+    require('growl')(notification, { title: 'ESLint' });
   }
 
   return Promise.resolve();

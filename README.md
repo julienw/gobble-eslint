@@ -40,6 +40,14 @@ module.exports = gobble( 'src/js' )
   .observeIf( gobble.env() !== 'production', 'eslint', {...});
 ```
 
+Use the `growl` option to send a notification when the linting is done:
+
+```js
+```
+
+See [the node-growl documentation](https://github.com/tj/node-growl) to know the
+requirements for this node module.
+
 ## License
 
 MIT. Copyright 2014 Rich Harris

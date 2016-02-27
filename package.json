@@ -6,7 +6,8 @@
   "license": "MIT",
   "repository": "https://github.com/gobblejs/gobble-eslint",
   "dependencies": {
-    "eslint": "^2.0"
+    "eslint": "^2.0",
+    "growl": "^1.9.2"
   },
   "keywords": [
     "gobble",
